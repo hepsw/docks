@@ -1,0 +1,2 @@
+CVMFS_SERVER_URL="http://cernvmfs.gridpp.rl.ac.uk/opt/@org@;http://cvmfs-stratum-one.cern.ch/opt/@org@;http://cvmfs.racf.bnl.gov/opt/@org@"
+CVMFS_PUBLIC_KEY=/etc/cvmfs/keys/cern.ch.pub

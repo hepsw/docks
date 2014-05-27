@@ -1,0 +1,18 @@
+## .bashrc
+
+if [ -f "/etc/bashrc" ] ; then
+  source /etc/bashrc
+fi
+
+## run CVMFS
+/bin/sh -c /root/run-cvmfs.sh
+
+export PYTHONSTARTUP=$HOME/.pythonrc.py
+
+## setup LHCb environment
+if [ -e "$MYSITEROOT/LbLogin.sh" ] ; then
+   echo "::: sourcing LbLogin..."
+   . $MYSITEROOT/LbLogin.sh
+   echo "::: sourcing LbLogin... [done]"
+fi
+

@@ -1,0 +1,18 @@
+## .bashrc
+
+if [ -f "/etc/bashrc" ] ; then
+  source /etc/bashrc
+fi
+
+## run CVMFS
+/bin/sh -c /root/run-cvmfs.sh
+
+export PYTHONSTARTUP=$HOME/.pythonrc.py
+
+## setup ATLAS environment
+if [ -e "$ATLAS_LOCAL_ROOT_BASE/user/atlasLocalSetup.sh" ] ; then
+   echo "::: sourcing ALRB..."
+   . $ATLAS_LOCAL_ROOT_BASE/user/atlasLocalSetup.sh
+   echo "::: sourcing ALRB... [done]"
+fi
+
