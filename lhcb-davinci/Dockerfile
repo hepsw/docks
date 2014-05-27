@@ -1,8 +1,8 @@
 ##
-## hepsw/docks/lhcb-davinci
+## hepsw/lhcb-davinci
 ## A container where the LHCb software stack (up to DaVinci) has been installed
 ##
-FROM hepsw/docks/lhcb-base
+FROM hepsw/lhcb-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 USER root

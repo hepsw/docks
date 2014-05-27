@@ -1,8 +1,8 @@
 ##
-## hepsw/docks/cvmfs-lhcb
+## hepsw/cvmfs-lhcb
 ## A container where CernVM-FS is up and running
 ##
-FROM hepsw/docks/cvmfs-base
+FROM hepsw/cvmfs-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 USER root
