@@ -1,8 +1,8 @@
-## hepsw/docks/lhcb-gaudi
+## hepsw/lhcb-gaudi
 
 .PHONY: all build
 
-REPO := hepsw/docks/lhcb-gaudi
+REPO := hepsw/lhcb-gaudi
 TAG := v25r1
 
 all: build

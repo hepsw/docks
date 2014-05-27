@@ -1,7 +1,7 @@
 .PHONY: all build
 
-BUILD_REPO := hepsw/docks/build-slc-base
-REPO := hepsw/docks/slc-base
+BUILD_REPO := hepsw/build-slc-base
+REPO := hepsw/slc-base
 TAG := 6.5
 
 all: build

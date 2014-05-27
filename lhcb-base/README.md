@@ -1,13 +1,13 @@
-hepsw/docks/lhcb-base
+hepsw/lhcb-base
 ===============
 
-`hepsw/docks/lhcb-base` is a container where the strict minimum to install LHCb
+`hepsw/lhcb-base` is a container where the strict minimum to install LHCb
 software has been installed.
 
 ## Usage
 
 ```sh
-$ docker run -h dev -i -t hepsw/docks/lhcb-base bash
+$ docker run -h dev -i -t hepsw/lhcb-base bash
 WARNING : using environment variable CMTCONFIG for cmtconfig
 WARNING : Copying /etc/skel/.bash_profile to /root/.bash_profile
 ERROR   : Cannot find project 'LCGCMT'

@@ -1,8 +1,8 @@
-## hepsw/docks/lhcb-base
+## hepsw/lhcb-base
 
 .PHONY: all build
 
-REPO := hepsw/docks/lhcb-base
+REPO := hepsw/lhcb-base
 TAG := $(TAG:`date +%Y%m%d`)
 
 all: build

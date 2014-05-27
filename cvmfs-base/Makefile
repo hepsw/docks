@@ -1,8 +1,8 @@
-## hepsw/docks/cvmfs-base
+## hepsw/cvmfs-base
 
 .PHONY: all build
 
-REPO := hepsw/docks/cvmfs-base
+REPO := hepsw/cvmfs-base
 TAG := $(TAG:`date +%Y%m%d`)
 
 all: build

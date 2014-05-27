@@ -11,7 +11,7 @@
 
 set -e
 
-repo="hepsw/docks/slc-base"
+repo="hepsw/slc-base"
 distro="slc-6"
 mirror="$3"
 

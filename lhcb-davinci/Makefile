@@ -1,8 +1,8 @@
-## hepsw/docks/lhcb-davinci
+## hepsw/lhcb-davinci
 
 .PHONY: all build
 
-REPO := hepsw/docks/lhcb-davinci
+REPO := hepsw/lhcb-davinci
 TAG := v34r1
 
 all: build

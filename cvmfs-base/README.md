@@ -1,4 +1,4 @@
-hepsw/docks/cvmfs-base
+hepsw/cvmfs-base
 ================
 
 A docker container with CVMFS installed and stub-configuration (for SFT+CERNVM)
@@ -7,4 +7,4 @@ A docker container with CVMFS installed and stub-configuration (for SFT+CERNVM)
 ## Usage
 
 This container is meant as a base for other containers. see
-`hepsw/docks/cvmfs-lhcb` and `hepsw/docks/cvmfs-lhcb` for examples.
+`hepsw/cvmfs-lhcb` and `hepsw/cvmfs-lhcb` for examples.
