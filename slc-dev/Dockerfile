@@ -1,8 +1,8 @@
 ##
-## binet/slc-dev
+## hepsw/docks/slc-dev
 ## a Dockerfile to create a container for code development.
 ##
-FROM binet/slc-base
+FROM hepsw/docks/slc-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 ## install useful programs for development

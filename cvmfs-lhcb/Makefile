@@ -1,8 +1,8 @@
-## binet/cvmfs-lhcb
+## hepsw/docks/cvmfs-lhcb
 
 .PHONY: all build
 
-REPO := binet/cvmfs-lhcb
+REPO := hepsw/docks/cvmfs-lhcb
 TAG := $(TAG:`date +%Y%m%d`)
 
 all: build

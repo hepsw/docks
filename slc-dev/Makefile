@@ -4,8 +4,8 @@ all: build
 	@echo "done"
 
 build: Dockerfile
-	docker build --rm --tag=binet/slc-dev .
+	docker build --rm --tag=hepsw/docks/slc-dev .
 
 upload: build
-	docker push binet/slc-dev:latest
+	docker push hepsw/docks/slc-dev:latest
 

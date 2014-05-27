@@ -11,7 +11,7 @@
 
 set -e
 
-repo="binet/slc-base"
+repo="hepsw/docks/slc-base"
 distro="slc-6"
 mirror="$3"
 

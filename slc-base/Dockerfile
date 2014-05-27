@@ -6,9 +6,9 @@ RUN apt-get install -y \
 	git rinse sudo tar
 
 RUN git clone \
-	git://github.com/sbinet/docker-containers \
-	/docker-containers
+	git://github.com/hepsw/docks \
+	/docks
 
 RUN mkdir /build && \
 	cd /build && \
-	/docker-containers/mkimage-slc.sh
+	/docks/mkimage-slc.sh

@@ -1,4 +1,4 @@
-binet/cvmfs-lhcb
+hepsw/docks/cvmfs-lhcb
 ================
 
 A docker container with CVMFS installed, running and configured with LHCb s/w.
@@ -8,7 +8,7 @@ A docker container with CVMFS installed, running and configured with LHCb s/w.
 Once the container has been built or pulled from the docker-index:
 
 ```sh
-$ docker run -h dev --privileged -i -t binet/cvmfs-lhcb bash
+$ docker run -h dev --privileged -i -t hepsw/docks/cvmfs-lhcb bash
 ::: mounting FUSE...
 CernVM-FS: running with credentials 499:497
 CernVM-FS: loading Fuse module... done

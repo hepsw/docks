@@ -1,8 +1,8 @@
-## binet/lhcb-davinci
+## hepsw/docks/lhcb-davinci
 
 .PHONY: all build
 
-REPO := binet/lhcb-davinci
+REPO := hepsw/docks/lhcb-davinci
 TAG := v34r1
 
 all: build

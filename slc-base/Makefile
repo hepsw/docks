@@ -1,7 +1,7 @@
 .PHONY: all build
 
-BUILD_REPO := binet/build-slc-base
-REPO := binet/slc-base
+BUILD_REPO := hepsw/docks/build-slc-base
+REPO := hepsw/docks/slc-base
 TAG := 6.5
 
 all: build

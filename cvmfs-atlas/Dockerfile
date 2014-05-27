@@ -1,8 +1,8 @@
 ##
-## binet/cvmfs-atlas
+## hepsw/docks/cvmfs-atlas
 ## A container where CernVM-FS is up and running
 ##
-FROM binet/cvmfs-base
+FROM hepsw/docks/cvmfs-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 USER root

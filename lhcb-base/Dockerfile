@@ -1,8 +1,8 @@
 ##
-## binet/lhcb-base
+## hepsw/docks/lhcb-base
 ## A container where the means to install the LHCb software stack have been installed
 ##
-FROM binet/slc-base
+FROM hepsw/docks/slc-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 USER root

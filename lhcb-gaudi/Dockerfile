@@ -1,8 +1,8 @@
 ##
-## binet/lhcb-gaudi
+## hepsw/docks/lhcb-gaudi
 ## A container where the GAUDI software stack has been installed
 ##
-FROM binet/lhcb-base
+FROM hepsw/docks/lhcb-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 USER root
