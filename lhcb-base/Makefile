@@ -3,7 +3,7 @@
 .PHONY: all build
 
 REPO := hepsw/lhcb-base
-TAG ?= `date +%Y%m%d`
+TAG ?= $(shell date +%Y%m%d)
 
 all: build
 	@echo "done"

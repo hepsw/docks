@@ -3,7 +3,7 @@
 .PHONY: all build
 
 REPO := hepsw/cvmfs-base
-TAG ?= `date +%Y%m%d`
+TAG ?= $(shell date +%Y%m%d)
 
 all: build
 	@echo "done"

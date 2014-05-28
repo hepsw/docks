@@ -1,7 +1,7 @@
 .PHONY: all build
 
 REPO := hepsw/slc-dev
-TAG ?= `date +%Y%m%d`
+TAG ?= $(shell date +%Y%m%d)
 
 all: build
 	@echo "done"
