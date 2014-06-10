@@ -22,13 +22,13 @@ RUN yum install -y \
     which
 
 ## retrieve install
-RUN curl -O -L http://cern.ch/binet/sw/dist/pkr && \
-    chmod +x ./pkr && \
-    mv ./pkr /usr/bin/. && \
-    pkr version
+RUN curl -O -L http://cern.ch/binet/sw/dist/lbpkr && \
+    chmod +x ./lbpkr && \
+    mv ./lbpkr /usr/bin/. && \
+    lbpkr version
 
 ## install LBSCRIPTS (for LbLogin)
-RUN pkr install LBSCRIPTS
+RUN lbpkr install LBSCRIPTS
 
 ## clean-up
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \

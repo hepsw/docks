@@ -13,10 +13,10 @@ ENV MYSITEROOT /opt/lhcb-sw
 ENV CMTCONFIG x86_64-slc6-gcc48-opt
 
 ## install (source+binaries)
-RUN pkr install DAVINCI_v34r1_`echo $CMTCONFIG| tr "-" "_"`
+RUN lbpkr install DAVINCI_v34r1_`echo $CMTCONFIG| tr "-" "_"`
 
 ## FIXME: install manually QMTestFiles (bug in rpm deps)
-RUN pkr install PARAM_QMTestFiles
+RUN lbpkr install PARAM_QMTestFiles
 
 ## clean-up
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \

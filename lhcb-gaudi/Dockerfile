@@ -13,7 +13,7 @@ ENV MYSITEROOT /opt/lhcb-sw
 ENV CMTCONFIG x86_64-slc6-gcc48-opt
 
 ## install (source+binaries)
-RUN pkr install GAUDI_v25r1_`echo $CMTCONFIG| tr "-" "_"`
+RUN lbpkr install GAUDI_v25r1_`echo $CMTCONFIG| tr "-" "_"`
 
 ## clean-up
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
