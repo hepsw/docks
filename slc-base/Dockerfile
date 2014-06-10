@@ -2,7 +2,8 @@ FROM ubuntu
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 # install a few dependencies
-RUN apt-get install -y \
+RUN apt-get update -y && \
+    apt-get install -y \
 	git rinse sudo tar
 
 RUN git clone \
