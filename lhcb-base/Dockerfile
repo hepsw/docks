@@ -22,7 +22,7 @@ RUN yum install -y \
     which
 
 ## retrieve install
-RUN curl -O -L http://cern.ch/binet/sw/dist/lbpkr && \
+RUN curl -O -L http://cern.ch/lhcbproject/dist/rpm/lbpkr && \
     chmod +x ./lbpkr && \
     mv ./lbpkr /usr/bin/. && \
     lbpkr version
