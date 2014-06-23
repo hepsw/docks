@@ -38,5 +38,8 @@ RUN mkdir -p \
 RUN echo "cernvm-prod.cern.ch /cvmfs/cernvm-prod.cern.ch cvmfs defaults 0 0" >> /etc/fstab && \
     echo "sft.cern.ch         /cvmfs/sft.cern.ch cvmfs defaults 0 0" >> /etc/fstab
 
+## make the whole container seamlessly executable
+ENTRYPOINT ["/bin/bash"]
+
 ## EOF
 

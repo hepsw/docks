@@ -27,5 +27,8 @@ RUN /bin/rm -rf $MYSITEROOT/lcg/releases/ROOT/v5-99-*
 
 WORKDIR /root
 
+## make the whole container seamlessly executable
+ENTRYPOINT ["/bin/bash"]
+
 ## EOF
 

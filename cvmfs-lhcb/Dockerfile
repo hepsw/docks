@@ -22,5 +22,8 @@ RUN mkdir -p /cvmfs/lhcb.cern.ch && \
 ADD etc-cvmfs-lhcb-local    /etc/cvmfs/config.d/lhcb.cern.ch.local
 ADD dot-bashrc              $HOME/.bashrc
 
+## make the whole container seamlessly executable
+ENTRYPOINT ["/bin/bash"]
+
 ## EOF
 

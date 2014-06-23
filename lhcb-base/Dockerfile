@@ -40,5 +40,8 @@ WORKDIR /root
 ADD dot-pythonrc.py  $HOME/.pythonrc.py
 ADD dot-bashrc       $HOME/.bashrc
 
+## make the whole container seamlessly executable
+ENTRYPOINT ["/bin/bash"]
+
 ## EOF
 
