@@ -7,7 +7,7 @@ software has been installed.
 ## Usage
 
 ```sh
-$ docker run -h dev -i -t hepsw/lhcb-base bash
+$ docker run -h dev -i -t hepsw/lhcb-base
 WARNING : using environment variable CMTCONFIG for cmtconfig
 WARNING : Copying /etc/skel/.bash_profile to /root/.bash_profile
 ERROR   : Cannot find project 'LCGCMT'

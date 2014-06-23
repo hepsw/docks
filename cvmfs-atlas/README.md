@@ -8,7 +8,7 @@ A docker container with CVMFS installed, running and configured with ATLAS s/w.
 Once the container has been built or pulled from the docker-index:
 
 ```sh
-$ docker run -h dev --privileged -i -t hepsw/cvmfs-atlas bash
+$ docker run -h dev --privileged -i -t hepsw/cvmfs-atlas
 ::: mounting FUSE...
 CernVM-FS: running with credentials 499:497
 CernVM-FS: loading Fuse module... done

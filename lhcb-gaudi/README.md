@@ -8,7 +8,7 @@ A docker container with Gaudi installed.
 Once the container has been built or pulled from the docker-index
 
 ```sh
-$ docker run -h dev -i -t hepsw/lhcb-gaudi bash
+$ docker run -h dev -i -t hepsw/lhcb-gaudi
 WARNING : using environment variable CMTCONFIG for cmtconfig
 WARNING : Copying /etc/skel/.bash_profile to /root/.bash_profile
 ALWAYS  : Configuring LbScripts v7r10p4 from /opt/lhcb-sw/lhcb/LBSCRIPTS/LBSCRIPTS_v7r10p4
