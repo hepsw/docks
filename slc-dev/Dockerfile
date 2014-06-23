@@ -21,7 +21,7 @@ RUN yum install -y \
     which
 
 ## install go
-RUN curl http://golang.org/dl/go1.3.linux-amd64.tar.gz | \
+RUN curl -L http://golang.org/dl/go1.3.linux-amd64.tar.gz | \
     tar -C /usr/local -zxf -
 ENV PATH         /usr/local/go/bin:$PATH
 
