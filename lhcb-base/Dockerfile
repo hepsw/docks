@@ -25,6 +25,8 @@ RUN yum install -y \
 RUN curl -O -L http://cern.ch/lhcbproject/dist/rpm/lbpkr && \
     chmod +x ./lbpkr && \
     mv ./lbpkr /usr/bin/. && \
+    lbpkr install lbpkr && \
+    lbpkr update && \
     lbpkr version
 
 ## install LBSCRIPTS (for LbLogin)
