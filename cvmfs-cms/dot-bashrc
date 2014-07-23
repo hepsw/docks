@@ -1,0 +1,18 @@
+## .bashrc
+
+if [ -f "/etc/bashrc" ] ; then
+  source /etc/bashrc
+fi
+
+## run CVMFS
+/bin/sh -c /root/run-cvmfs.sh
+
+export PYTHONSTARTUP=$HOME/.pythonrc.py
+
+## setup CMS environment
+if [ -e "$CMS_LOCAL_ROOT_BASE/cmsset_default.sh" ] ; then
+   echo "::: sourcing cmsset_default.sh..."
+   source $CMS_LOCAL_ROOT_BASE/cmsset_default.sh
+   echo "::: sourcing cmsset_default.sh... [done]"
+fi
+
