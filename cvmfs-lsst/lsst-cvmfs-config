@@ -1,0 +1,3 @@
+CVMFS_SERVER_URL=http://cccrnvmfs01.in2p3.fr/cvmfs/lsst.in2p3.fr
+CVMFS_HTTP_PROXY="http://cctbcrnvmfsli01.in2p3.fr:3128"
+CVMFS_PUBLIC_KEY=/etc/cvmfs/keys/lsst.in2p3.fr.pub

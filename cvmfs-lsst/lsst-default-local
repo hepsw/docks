@@ -1,0 +1,4 @@
+CVMFS_REPOSITORIES=lsst.in2p3.fr
+CVMFS_QUOTA_LIMIT=20000
+
+#CVMFS_CACHE_BASE=/scratch/var/cache/cvmfs2
