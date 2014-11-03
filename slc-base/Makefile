@@ -12,8 +12,7 @@ build: Dockerfile
 	docker tag --force $(BUILD_REPO):$(TAG) $(BUILD_REPO):latest
 	docker run $(BUILD_REPO):$(TAG) /bin/true
 	mkdir -p build
-	# FIXME: remove "|| true" when https://github.com/dotcloud/docker/issues/3986 is FIXED
-	docker cp $(shell docker ps -q -l):/build/docker.tar build || true
+	docker cp $(shell docker ps -q -l):/build/docker.tar build
 	cat build/docker.tar | docker import - $(REPO):$(TAG)
 	docker tag --force $(REPO):$(TAG) $(REPO):latest
 
