@@ -11,8 +11,8 @@
 
 set -e
 
-repo="hepsw/slc-base"
-distro="slc-6"
+repo="$1" # e.g. "hepsw/slc-base"
+distro="$2" # e.g. "slc-6"
 mirror="$3"
 
 if [ ! "$repo" ] || [ ! "$distro" ]; then
@@ -37,6 +37,12 @@ if [ ! "$repo" ] || [ ! "$distro" ]; then
 	echo >&2
 	exit 1
 fi
+
+echo "#################"
+echo "repo=${repo}"
+echo "distro=${distro}"
+echo "mirror=${mirror}"
+echo "#################"
 
 target="/tmp/docker-rootfs-rinse-$distro-$$-$RANDOM"
 

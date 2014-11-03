@@ -12,4 +12,4 @@ RUN git clone \
 
 RUN mkdir /build && \
 	cd /build && \
-	/docks/mkimage-slc.sh
+	/docks/mkimage-slc.sh hepsw/slc-base slc-6 
