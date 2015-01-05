@@ -24,6 +24,8 @@ Creating user data directory: /root/.eups
 
 [root@dev lsst]# yum install -y git
 
+[root@dev lsst]# cd /tmp
+
 [root@dev lsst]# git clone http://git.lsstcorp.org/contrib/demos/lsst_dm_stack_demo.git
 Cloning into 'lsst_dm_stack_demo'...
 remote: Counting objects: 495, done.
