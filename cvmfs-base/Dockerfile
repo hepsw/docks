@@ -29,7 +29,8 @@ ADD dot-pythonrc.py  $HOME/.pythonrc.py
 ADD etc-cvmfs-default-local /etc/cvmfs/default.local
 ADD etc-cvmfs-domain-local  /etc/cvmfs/domain.d/cern.ch.local
 
-ADD run-cvmfs.sh /root/run-cvmfs.sh
+ADD run-cvmfs.sh /etc/cvmfs/run-cvmfs.sh
+RUN chmod uga+rx /etc/cvmfs/run-cvmfs.sh
 
 RUN mkdir -p \
     /cvmfs/cernvm-prod.cern.ch \
