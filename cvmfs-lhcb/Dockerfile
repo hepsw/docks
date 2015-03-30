@@ -20,7 +20,21 @@ RUN mkdir -p /cvmfs/lhcb.cern.ch && \
     echo "lhcb.cern.ch /cvmfs/lhcb.cern.ch cvmfs defaults 0 0" >> /etc/fstab
 
 ADD etc-cvmfs-lhcb-local    /etc/cvmfs/config.d/lhcb.cern.ch.local
-ADD dot-bashrc              $HOME/.bashrc
+
+## create lhcb user to run lhcb software
+RUN useradd -ms /bin/bash lhcb
+
+## switch to lhcb user
+USER lhcb
+ENV USER lhcb
+ENV HOME /home/$USER
+RUN /bin/mkdir -p $HOME/run
+
+## add files last (as this invalids caches)
+ADD dot-pythonrc.py  $HOME/.pythonrc.py
+ADD dot-bashrc       $HOME/.bashrc
+
+WORKDIR $HOME/run
 
 ## make the whole container seamlessly executable
 ENTRYPOINT ["/bin/bash"]
