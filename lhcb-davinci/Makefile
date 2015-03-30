@@ -3,7 +3,7 @@
 .PHONY: all build
 
 REPO := hepsw/lhcb-davinci
-TAG := v34r1
+TAG := v36r5
 
 all: build
 	@echo "done"
