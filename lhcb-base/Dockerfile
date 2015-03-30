@@ -6,10 +6,9 @@ FROM hepsw/slc-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 USER root
-ENV USER root
-ENV HOME /root
 
 ENV MYSITEROOT /opt/lhcb-sw
+ENV PATH       $MYSITEROOT/usr/bin:$PATH
 ENV CMTCONFIG x86_64-slc6-gcc48-opt
 
 RUN mkdir -p $MYSITEROOT
@@ -24,19 +23,25 @@ RUN yum install -y \
 ## retrieve install
 RUN curl -O -L http://cern.ch/lhcbproject/dist/rpm/lbpkr && \
     chmod +x ./lbpkr && \
-    mv ./lbpkr /usr/bin/. && \
-    lbpkr install lbpkr && \
-    lbpkr update && \
+    ./lbpkr install lbpkr && \
+    /bin/rm ./lbpkr && \
     lbpkr version
 
-## install LBSCRIPTS (for LbLogin)
-RUN lbpkr install LBSCRIPTS
+## install LBSCRIPTS (for LbLogin) and clean-up
+RUN lbpkr install LBSCRIPTS && \
+    /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
+    /bin/mkdir $MYSITEROOT/{tmp,targz}
 
-## clean-up
-RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
-    mkdir $MYSITEROOT/{tmp,targz}
+## create lhcb user to run lhcb software
+RUN useradd -ms /bin/bash lhcb
 
-WORKDIR /root
+## switch to lhcb user
+USER lhcb
+ENV USER lhcb
+ENV HOME /home/$USER
+RUN /bin/mkdir -p $HOME/run
+
+WORKDIR $HOME
 
 ## add files last (as this invalids caches)
 ADD dot-pythonrc.py  $HOME/.pythonrc.py
