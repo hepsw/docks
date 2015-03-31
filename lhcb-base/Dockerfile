@@ -18,7 +18,9 @@ RUN yum install -y \
     bzip2 \
     freetype \
     glibc-headers \
+    sudo \
     tar \
+    time \
     which
 
 ## retrieve install
@@ -34,7 +36,9 @@ RUN lbpkr install LBSCRIPTS && \
     /bin/mkdir $MYSITEROOT/{tmp,targz}
 
 ## create lhcb user to run lhcb software
-RUN useradd -ms /bin/bash lhcb
+## add lhcb user to sudoers
+RUN useradd -ms /bin/bash lhcb && \
+    echo 'lhcb ALL=(ALL)  NOPASSWD:ALL' >> /etc/sudoers
 
 ## switch to lhcb user
 USER lhcb
