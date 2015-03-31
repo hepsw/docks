@@ -19,7 +19,9 @@ ADD etc-yum-cernvm.repo /etc/yum.repos.d/cernvm.repo
 RUN yum update -y && yum -y install \
     cvmfs cvmfs-init-scripts cvmfs-auto-setup \
     freetype fuse \
-    man nano openssh-server openssl098e libXext libXpm
+    glibc-headers \
+    man nano openssh-server openssl098e libXext libXpm \
+    time
 
 WORKDIR /root
 
