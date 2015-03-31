@@ -21,7 +21,9 @@ RUN yum install -y \
     sudo \
     tar \
     time \
-    which
+    which \
+    ; \
+    yum clean all
 
 ## retrieve install
 RUN curl -O -L http://cern.ch/lhcbproject/dist/rpm/lbpkr && \
