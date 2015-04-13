@@ -16,6 +16,7 @@ RUN mkdir -p $MYSITEROOT
 ## install some system dependencies
 RUN yum install -y \
     bzip2 \
+    csh \
     freetype \
     glibc-headers \
     sudo \
