@@ -1,7 +1,7 @@
 ##
 ## hepsw/cc7-base is a WIP image for CERN CentOS-7
 ##
-FROM centos:centos7
+FROM centos:7
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 # add CERN CentOS yum repo
