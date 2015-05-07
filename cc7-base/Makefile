@@ -1,7 +1,7 @@
 .PHONY: all build
 
 REPO := hepsw/cc7-base
-TAG := 7.0
+TAG := 7.1
 
 all: build
 	@echo "done"

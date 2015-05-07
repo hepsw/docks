@@ -17,4 +17,7 @@ RUN /usr/bin/rpm --import /tmp/RPM-GPG-KEY-cern && \
 #     /usr/bin/yum groupinstall --skip-broken -y --exclude libwbclient.i686 'Software Development Workstation (CERN Recommended Setup)' && \
 #     /usr/bin/yum --enablerepo=*-testing clean all
 
-RUN yum update -y
+RUN yum update -y && \
+	yum clean all
+
+## EOF
