@@ -30,7 +30,8 @@ RUN chmod 0444 /etc/cvmfs/keys/lsst.in2p3.fr.pub && \
      /etc/cvmfs/config.d/lsst.in2p3.fr.conf
 
 ## make the whole container seamlessly executable
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/usr/bin/cubied"]
+CMD ["bash"]
 
 ## EOF
 

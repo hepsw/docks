@@ -4,8 +4,5 @@ if [ -f "/etc/bashrc" ] ; then
   source /etc/bashrc
 fi
 
-## run CVMFS
-/bin/sh -c /etc/cvmfs/run-cvmfs.sh
-
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
