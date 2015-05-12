@@ -27,7 +27,8 @@ RUN yum update -y && yum -y install \
 
 RUN mkdir -p \
     /cvmfs/cernvm-prod.cern.ch \
-    /cvmfs/sft.cern.ch
+    /cvmfs/sft.cern.ch \
+	/etc/cubie.d
 
 RUN echo "cernvm-prod.cern.ch /cvmfs/cernvm-prod.cern.ch cvmfs defaults 0 0" >> /etc/fstab && \
     echo "sft.cern.ch         /cvmfs/sft.cern.ch cvmfs defaults 0 0" >> /etc/fstab
@@ -35,16 +36,25 @@ RUN echo "cernvm-prod.cern.ch /cvmfs/cernvm-prod.cern.ch cvmfs defaults 0 0" >> 
 WORKDIR /root
 
 ## add files last (as this invalids caches)
+ADD http://cern.ch/binet/sw/dist/cubied /usr/bin/cubied
 ADD dot-pythonrc.py  $HOME/.pythonrc.py
 
 ADD etc-cvmfs-default-local /etc/cvmfs/default.local
 ADD etc-cvmfs-domain-local  /etc/cvmfs/domain.d/cern.ch.local
 
+ADD etc-cubied-cvmfs.conf /etc/cubie.d/cvmfs.conf
 ADD run-cvmfs.sh /etc/cvmfs/run-cvmfs.sh
-RUN chmod uga+rx /etc/cvmfs/run-cvmfs.sh
+
+RUN chmod uga+rx \
+	/etc/cvmfs/run-cvmfs.sh \
+	/usr/bin/cubied \
+	;
+
+VOLUME ["/cvmfs"]
 
 ## make the whole container seamlessly executable
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/usr/bin/cubied"]
+CMD ["bash"]
 
 ## EOF
 
