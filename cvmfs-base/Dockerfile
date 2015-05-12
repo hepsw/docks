@@ -18,10 +18,13 @@ ADD etc-yum-cernvm.repo /etc/yum.repos.d/cernvm.repo
 # Install rpms
 RUN yum update -y && yum -y install \
     cvmfs cvmfs-init-scripts cvmfs-auto-setup \
+	cvmfs-config-default \
+	csh \
     freetype fuse \
     glibc-headers \
     man nano openssh-server openssl098e libXext libXpm \
-    time \
+	tcsh time \
+	zsh \
     ; \
     yum clean all
 
@@ -41,6 +44,7 @@ ADD dot-pythonrc.py  $HOME/.pythonrc.py
 
 ADD etc-cvmfs-default-local /etc/cvmfs/default.local
 ADD etc-cvmfs-domain-local  /etc/cvmfs/domain.d/cern.ch.local
+ADD etc-cvmfs-keys          /etc/cvmfs/keys
 
 ADD etc-cubied-cvmfs.conf /etc/cubie.d/cvmfs.conf
 ADD run-cvmfs.sh /etc/cvmfs/run-cvmfs.sh
