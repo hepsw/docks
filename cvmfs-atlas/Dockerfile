@@ -24,7 +24,8 @@ RUN mkdir -p /cvmfs/atlas.cern.ch && \
 ADD dot-bashrc              $HOME/.bashrc
 
 ## make the whole container seamlessly executable
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/usr/bin/cubied"]
+CMD ["bash"]
 
 ## EOF
 
