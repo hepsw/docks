@@ -11,12 +11,6 @@ ENV HOME /root
 ENV VO_LHCB_SW_DIR /cvmfs/lhcb.cern.ch
 ENV MYSITEROOT     /cvmfs/lhcb.cern.ch/lib
 
-## additional LHCb deps
-RUN yum install -y \
-    csh \
-    ; \
-    yum clean all
-
 ## make sure FUSE can be enabled
 RUN if [[ ! -e /dev/fuse ]]; then mknod -m 666 /dev/fuse c 10 229; fi
 
