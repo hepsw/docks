@@ -29,7 +29,8 @@ ADD etc-cvmfs-lhcb-local    /etc/cvmfs/config.d/lhcb.cern.ch.local
 ADD dot-bashrc              $HOME/.bashrc
 
 ## make the whole container seamlessly executable
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/usr/bin/cubied"]
+CMD ["bash"]
 
 ## EOF
 
