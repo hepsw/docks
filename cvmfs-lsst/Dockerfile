@@ -20,9 +20,11 @@ RUN mkdir -p /etc/cvmfs/keys && \
     echo "lsst.in2p3.fr /cvmfs/lsst.in2p3.fr cvmfs defaults 0 0" >> /etc/fstab
 
 ADD dot-bashrc              $HOME/.bashrc
-ADD lsst-pub-key            /etc/cvmfs/keys/lsst.in2p3.fr.pub
 ADD lsst-default-local      /etc/cvmfs/default.local
-ADD lsst-cvmfs-config       /etc/cvmfs/config.d/lsst.in2p3.fr.conf
+ADD https://github.com/airnandez/lsst-cvmfs/raw/master/lsst.in2p3.fr.conf \
+    /etc/cvmfs/config.d/lsst.in2p3.fr.conf
+ADD https://github.com/airnandez/lsst-cvmfs/raw/master/lsst.in2p3.fr.pub \
+    /etc/cvmfs/keys/lsst.in2p3.fr.pub
 
 RUN chmod 0444 /etc/cvmfs/keys/lsst.in2p3.fr.pub && \
     chmod 0644 \
