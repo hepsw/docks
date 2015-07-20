@@ -1,5 +1,5 @@
 ##
-## hepsw/alice-fair
+## hepsw/alice-base
 ## A container where all dependencies for FairRoot development are
 ## installed.
 ##
@@ -20,10 +20,17 @@ RUN apt-get update -y && \
 	 subversion git xutils-dev flex bison lsb-release \
 	 python-dev libxml2-dev wget libssl-dev
 
-RUN mkdir -p /opt/alice
+RUN mkdir -p          /build
+ADD fair-config.cache /build/fair-config.cache
+
+RUN mkdir -p /opt/alice && \
+	git clone git://github.com/FairRootGroup/FairSoft /build/fair-soft && \
+	cd /build/fair-soft && \
+	./configure.sh /build/fair-config.cache && \
+	/bin/rm -rf /build/fair-soft
+
 WORKDIR /opt/alice
 
-## add files last (as this invalids caches)
 ADD http://cern.ch/binet/sw/dist/cubied /usr/bin/cubied
 ADD dot-pythonrc.py         $HOME/.pythonrc.py
 

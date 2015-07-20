@@ -1,0 +1,10 @@
+compiler=gcc
+debug=no
+optimize=yes
+geant4_download_install_data_automatic=no
+geant4_install_data_from_dir=no
+build_root6=no
+build_python=yes
+install_sim=yes
+SIMPATH_INSTALL=/opt/alice/sw/externals
+platform=linux
