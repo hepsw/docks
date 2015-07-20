@@ -10,6 +10,7 @@ USER root
 ENV USER root
 ENV HOME /root
 ENV PYTHONSTARTUP=$HOME/.pythonrc.py
+ENV SIMPATH=/opt/alice/sw/externals
 
 RUN apt-get update -y && \
 	apt-get install -y \
