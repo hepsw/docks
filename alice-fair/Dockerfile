@@ -27,6 +27,8 @@ WORKDIR /opt/alice
 ADD http://cern.ch/binet/sw/dist/cubied /usr/bin/cubied
 ADD dot-pythonrc.py         $HOME/.pythonrc.py
 
+RUN chmod +x /usr/bin/cubied
+
 ## make the whole container seamlessly executable
 ENTRYPOINT ["/usr/bin/cubied"]
 CMD ["bash"]
