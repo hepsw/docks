@@ -1,8 +1,8 @@
-## hepsw/alice-base
+## hepsw/alice-fair
 
 .PHONY: all build
 
-REPO := hepsw/alice-base
+REPO := hepsw/alice-fair
 TAG ?= $(shell date +%Y%m%d)
 
 all: build
