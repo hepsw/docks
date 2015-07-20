@@ -25,7 +25,7 @@ WORKDIR /opt/alice
 
 ## add files last (as this invalids caches)
 ADD http://cern.ch/binet/sw/dist/cubied /usr/bin/cubied
-ADD dot-pythonrc            $HOME/.pythonrc
+ADD dot-pythonrc.py         $HOME/.pythonrc.py
 
 ## make the whole container seamlessly executable
 ENTRYPOINT ["/usr/bin/cubied"]
