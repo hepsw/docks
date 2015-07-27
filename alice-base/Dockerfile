@@ -14,8 +14,10 @@ ENV SIMPATH=/opt/alice/sw/externals
 
 RUN apt-get update -y && \
 	apt-get install -y \
-	 cmake cmake-data g++ gcc gfortran \
-	 build-essential make patch sed libx11-dev libxft-dev \
+	 cmake cmake-data curl g++ gcc gfortran \
+	 build-essential make patch sed \
+	 libcurl4-openssl-dev \
+	 libx11-dev libxft-dev \
 	 libxext-dev libxpm-dev libxmu-dev libglu1-mesa-dev \
 	 libgl1-mesa-dev ncurses-dev curl bzip2 gzip unzip tar \
 	 subversion git xutils-dev flex bison lsb-release \
