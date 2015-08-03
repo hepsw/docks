@@ -11,6 +11,8 @@ ENV USER root
 ENV HOME /root
 ENV PYTHONSTARTUP=$HOME/.pythonrc.py
 ENV SIMPATH=/opt/alice/sw/externals
+ENV PATH=$SIMPATH/bin:$PATH
+ENV LD_LIBRARY_PATH=$SIMPATH/lib:$LD_LIBRARY_PATH
 
 RUN apt-get update -y && \
 	apt-get install -y \
@@ -25,6 +27,15 @@ RUN apt-get update -y && \
 
 RUN mkdir -p /opt/alice
 WORKDIR /opt/alice
+
+RUN mkdir -p          /build/build-fair/
+ADD fair-config.cache /build/fair-config.cache
+
+RUN git clone git://github.com/FairRootGroup/FairSoft /build/fair-soft && \
+	cd /build/fair-soft && \
+	./configure.sh /build/fair-config.cache && \
+	/bin/rm -rf /build
+
 
 ADD http://cern.ch/binet/sw/dist/cubied /usr/bin/cubied
 ADD dot-pythonrc.py         $HOME/.pythonrc.py

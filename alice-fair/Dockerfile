@@ -9,18 +9,13 @@ MAINTAINER Sebastien Binet "binet@cern.ch"
 USER root
 ENV USER root
 ENV HOME /root
-ENV PYTHONSTARTUP=$HOME/.pythonrc.py
-ENV SIMPATH=/opt/alice/sw/externals
-
-RUN mkdir -p          /build/build-fair
-ADD fair-config.cache /build/fair-config.cache
-
-RUN git clone git://github.com/FairRootGroup/FairSoft /build/fair-soft && \
-	cd /build/fair-soft && \
-	./configure.sh /build/fair-config.cache && \
-	/bin/rm -rf /build/fair-soft
+#ENV PYTHONSTARTUP=$HOME/.pythonrc.py
+#ENV SIMPATH=/opt/alice/sw/externals
+ENV PATH=/opt/alice/sw/bin:$PATH
+ENV LD_LIBRARY_PATH=/opt/alice/sw/lib:$LD_LIBRARY_PATH
 
 RUN git clone git://github.com/FairRootGroup/FairRoot /build/fair-root && \
+	mkdir -p /build/build-fair && \
 	cd /build/build-fair && \
 	cmake -DCMAKE_INSTALL_PREFIX=/opt/alice/sw /build/fair-root && \
 	make && \
@@ -28,11 +23,6 @@ RUN git clone git://github.com/FairRootGroup/FairRoot /build/fair-root && \
 	/bin/rm -rf /build
 
 WORKDIR /opt/alice
-
-ADD http://cern.ch/binet/sw/dist/cubied /usr/bin/cubied
-ADD dot-pythonrc.py         $HOME/.pythonrc.py
-
-RUN chmod +x /usr/bin/cubied
 
 ## make the whole container seamlessly executable
 ENTRYPOINT ["/usr/bin/cubied"]
