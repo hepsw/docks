@@ -16,9 +16,8 @@ RUN if [[ ! -e /dev/fuse ]]; then mknod -m 666 /dev/fuse c 10 229; fi
 ADD etc-yum-cernvm.repo /etc/yum.repos.d/cernvm.repo
 
 # Install rpms
-RUN yum update -y && yum -y install \
-    cvmfs cvmfs-init-scripts cvmfs-auto-setup \
-	cvmfs-config-default \
+RUN yum update -y && yum install -y \
+    cvmfs cvmfs-auto-setup cvmfs-config-default \
 	csh \
     freetype fuse \
     glibc-headers \
@@ -26,7 +25,7 @@ RUN yum update -y && yum -y install \
 	tcsh time \
 	zsh \
     ; \
-    yum clean all
+    yum clean -y all
 
 RUN mkdir -p \
     /cvmfs/cernvm-prod.cern.ch \
@@ -39,7 +38,7 @@ RUN echo "cernvm-prod.cern.ch /cvmfs/cernvm-prod.cern.ch cvmfs defaults 0 0" >> 
 WORKDIR /root
 
 ## add files last (as this invalids caches)
-ADD http://cern.ch/binet/sw/dist/cubied /usr/bin/cubied
+ADD http://cern.ch/binet/sw/dist/cubied-20151005-0.1 /usr/bin/cubied
 ADD dot-pythonrc.py  $HOME/.pythonrc.py
 
 ADD etc-cvmfs-default-local /etc/cvmfs/default.local
