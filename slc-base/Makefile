@@ -2,7 +2,7 @@
 
 BUILD_REPO := hepsw/build-slc-base
 REPO := hepsw/slc-base
-TAG := 6.6
+TAG := 6.7
 
 all: build
 	@echo "done"
