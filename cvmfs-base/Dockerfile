@@ -54,8 +54,6 @@ RUN chmod uga+rx \
 	/usr/bin/cubied \
 	;
 
-VOLUME ["/cvmfs"]
-
 ## make the whole container seamlessly executable
 ENTRYPOINT ["/usr/bin/cubied"]
 CMD ["bash"]
