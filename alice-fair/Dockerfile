@@ -22,6 +22,8 @@ RUN git clone git://github.com/FairRootGroup/FairRoot /build/fair-root && \
 	make install && \
 	/bin/rm -rf /build
 
+RUN echo "## FairRoot config\n\n. /opt/alice/sw/bin/FairRootConfig.sh\n" >> /root/.bashrc
+
 WORKDIR /opt/alice
 
 ## make the whole container seamlessly executable
