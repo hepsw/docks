@@ -7,8 +7,8 @@ fi
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 ## setup LHCb environment
-if [ -e "$MYSITEROOT/LbLogin.sh" ] ; then
-   . $MYSITEROOT/LbLogin.sh
+if [ -e "$MYSITEROOT/lhcb/LBSCRIPTS/prod/InstallArea/scripts/LbLogin.sh" ] ; then
+   . $MYSITEROOT/lhcb/LBSCRIPTS/prod/InstallArea/scripts/LbLogin.sh
    export PATH=$MYSITEROOT/usr/bin:$PATH
 fi
 
