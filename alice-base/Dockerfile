@@ -13,6 +13,7 @@ ENV PYTHONSTARTUP=$HOME/.pythonrc.py
 ENV SIMPATH=/opt/alice/sw/externals
 ENV PATH=$SIMPATH/bin:$PATH
 ENV LD_LIBRARY_PATH=$SIMPATH/lib:$LD_LIBRARY_PATH
+ENV CUBIED_VERSION=20160205
 
 RUN apt-get update -y && \
 	apt-get install -y \
@@ -37,7 +38,7 @@ RUN git clone git://github.com/FairRootGroup/FairSoft /build/fair-soft && \
 	/bin/rm -rf /build
 
 
-ADD http://cern.ch/binet/sw/dist/cubied /usr/bin/cubied
+ADD https://github.com/hepsw/cubie/releases/download/${CUBIED_VERSION}/cubied /usr/bin/cubied
 ADD dot-pythonrc.py         $HOME/.pythonrc.py
 
 RUN chmod +x /usr/bin/cubied

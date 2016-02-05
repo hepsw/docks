@@ -8,6 +8,7 @@ MAINTAINER Sebastien Binet "binet@cern.ch"
 USER root
 ENV USER root
 ENV HOME /root
+ENV CUBIED_VERSION 20160205
 
 ## make sure FUSE can be enabled
 RUN if [[ ! -e /dev/fuse ]]; then mknod -m 666 /dev/fuse c 10 229; fi
@@ -38,7 +39,7 @@ RUN echo "cernvm-prod.cern.ch /cvmfs/cernvm-prod.cern.ch cvmfs defaults 0 0" >> 
 WORKDIR /root
 
 ## add files last (as this invalids caches)
-ADD http://cern.ch/binet/sw/dist/cubied-20151005-0.1 /usr/bin/cubied
+ADD https://github.com/hepsw/cubie/releases/download/${CUBIED_VERSION}/cubied /usr/bin/cubied
 ADD dot-pythonrc.py  $HOME/.pythonrc.py
 
 ADD etc-cvmfs-default-local /etc/cvmfs/default.local
