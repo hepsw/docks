@@ -1,0 +1,7 @@
+## .bashrc
+
+if [ -f "/etc/bashrc" ] ; then
+  source /etc/bashrc
+fi
+
+export PYTHONSTARTUP=$HOME/.pythonrc.py
