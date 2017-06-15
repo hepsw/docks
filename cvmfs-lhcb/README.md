@@ -47,7 +47,7 @@ Environment for LbScripts v7r10p4 ready.
  Compat v1r18 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r18)
 ::: sourcing LbLogin... [done]
 
-
+[root@dev ~]# LbLogin -c x86_64-slc6-gcc48-opt
 [root@dev ~]# SetupProject GAUDI v25r1
 Configuring Gaudi v25r1 from /cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v25r1
 Using CMTPROJECTPATH = '/root/cmtuser:/cvmfs/lhcb.cern.ch/lib/lhcb:/cvmfs/lhcb.cern.ch/lib/lcg/releases:/cvmfs/lhcb.cern.ch/lib/lcg/app/releases:/cvmfs/lhcb.cern.ch/lib/lcg/external'
