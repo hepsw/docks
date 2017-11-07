@@ -6,7 +6,7 @@ MAINTAINER Sebastien Binet "binet@cern.ch"
 
 # add CERN CentOS yum repo
 ADD http://linux.web.cern.ch/linux/centos7/CentOS-CERN.repo /etc/yum.repos.d/CentOS-CERN.repo
-ADD http://linuxsoft.cern.ch/cern/centos/7.1/os/x86_64/RPM-GPG-KEY-cern /tmp/RPM-GPG-KEY-cern
+ADD http://linuxsoft.cern.ch/cern/centos/7/os/x86_64/RPM-GPG-KEY-cern /tmp/RPM-GPG-KEY-cern
 
 RUN /usr/bin/rpm --import /tmp/RPM-GPG-KEY-cern && \
     /bin/rm /tmp/RPM-GPG-KEY-cern
