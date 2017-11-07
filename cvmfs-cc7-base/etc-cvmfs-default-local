@@ -1,0 +1,7 @@
+CVMFS_REPOSITORIES=atlas,atlas-condb,lhcb,sft.cern.ch
+#CVMFS_CACHE_BASE=/scratch/var/cache/cvmfs2
+CVMFS_QUOTA_LIMIT=2000
+
+#CVMFS_HTTP_PROXY="http://[YOUR-SQUID-CACHE]:3128"
+#CVMFS_HTTP_PROXY="http://ca-proxy.cern.ch:3128"
+CVMFS_HTTP_PROXY="DIRECT"

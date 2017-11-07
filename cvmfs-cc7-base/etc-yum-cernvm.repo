@@ -1,0 +1,5 @@
+[cernvm]
+name=CernVM packages
+baseurl=https://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs/EL/$releasever/$basearch/
+enabled=1
+gpgcheck=0
