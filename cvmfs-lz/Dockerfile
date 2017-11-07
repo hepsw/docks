@@ -1,5 +1,5 @@
 ##
-## hepsw/cvmfs-cms
+## hepsw/cvmfs-lz
 ## A container where CernVM-FS is up and running
 ##
 FROM hepsw/cvmfs-base
@@ -8,8 +8,8 @@ MAINTAINER Luke Kreczko "kreczko@cern.ch"
 USER root
 ENV USER root
 ENV HOME /root
-ENV VO_LZ_SW_DIR       /cvmfs/cms.cern.ch
-ENV LZ_LOCAL_ROOT_BASE /cvmfs/cms.cern.ch
+ENV VO_LZ_SW_DIR       /cvmfs/lz.opensciencegrid.org
+ENV LZ_LOCAL_ROOT_BASE /cvmfs/lz.opensciencegrid.org
 
 ## make sure FUSE can be enabled
 RUN if [[ ! -e /dev/fuse ]]; then mknod -m 666 /dev/fuse c 10 229; fi
