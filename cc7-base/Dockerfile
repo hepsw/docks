@@ -18,6 +18,7 @@ RUN /usr/bin/rpm --import /tmp/RPM-GPG-KEY-cern && \
 #     /usr/bin/yum --enablerepo=*-testing clean all
 
 RUN yum update -y && \
-	yum clean all
+	yum clean all && \
+	/bin/rm -rf /var/cache/yum
 
 ## EOF
